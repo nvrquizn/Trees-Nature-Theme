@@ -83,7 +83,7 @@ READ ME:
   /* 🍃 floating box positioning */
   .boxtopper {
     padding: none;
-    float: right;
+    float: left;
     margin: -180px;
     height: 30px;
     width: 300px;
@@ -119,6 +119,7 @@ READ ME:
     width: 340px;
     position: relative;
     z-index: 1;
+	margin-right: -30px;
 	z-index: 3;
 	pointer-events:none !important;
   }
