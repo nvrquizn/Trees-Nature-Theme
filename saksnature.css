@@ -84,13 +84,13 @@ READ ME:
   .boxtopper {
     padding: none;
     float: right;
-    margin: -560px;
-    height: 0px;
-    width: 0px;
+    margin: -180px;
+    height: 30px;
+    width: 300px;
     position: relative;
-    z-index: 4;
-    margin-right: 250px;
-    pointer-events:none;
+    z-index: 1;
+    margin-left: 0px;
+    pointer-events:none !important;
   }
 }
 
@@ -111,18 +111,18 @@ READ ME:
 
 /* 🍃 floating box positioning */
 @media screen and (min-width: 768px){
-/*  .boxtopper {
+  .boxtopper {
     padding: none;
     float: right;
-    margin: -550px;
-    height: 0px;
-    width: 0px;
+    margin: -680px;
+    height: 30px;
+    width: 340px;
     position: relative;
-    z-index: 4;
-    margin-right: 320px;
-    pointer-events:none;
+    z-index: 1;
+	z-index: 3;
+	pointer-events:none !important;
   }
-} */
+}
 
 /* ============================= */
 /* 🌲 CHAT MESSAGES */
