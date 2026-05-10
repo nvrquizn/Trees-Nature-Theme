@@ -1,0 +1,1431 @@
+/* ========================================================= */
+/* 🌲 Sak (#327675)'s Den CSS - Forest Theme                */
+/* 🍃 Woodland Canopy / Nature-inspired aesthetic           */
+/* ========================================================= */
+
+/*
+READ ME:
+- This CSS is themed around peaceful forest scenery and earthy woodland charm.
+- Colors are moss greens, bark browns, muted sage tones, and soft nature highlights.
+- Designed for a calm, immersive, slightly detailed forest atmosphere.
+- Do NOT resell or heavily edit.
+- Thank you so much for choosing my CSS, I hope you enjoy!
+*/
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Philosopher:wght@400;700&display=swap');
+:root {
+  /* Woodland Nature Palette */
+  --kolur1: #8fb38a;     /* soft moss green */
+  --kolur170: #8fb38ab0;
+
+  --kolur2: #6d8f63;     /* forest sage */
+  --kolur270: #6d8f63b0;
+
+  --kolur3: #2d3b28;     /* shaded woodland */
+  --kolur370: #2d3b28c7;
+
+  --kolur350: #3a4b35d9; /* mossy glass shadow */
+
+  --kolur4: #5a704f;     /* muted pine green */
+  --kolur470: #5a704fc7;
+
+  --kolur5: #dfe8d7;     /* pale fern light */
+  --kolur6: #1d2619;     /* deep bark shadow */
+  --kolur7: #b7c9a9;     /* soft leaf highlight */
+
+  --kolur760: #6d8f6340;
+  --kolur780: #8fb38a40;
+
+  --darkgray: #171d15;   /* forest floor shadow */
+  --lightwhite: #edf3e8ce; /* misty woodland glow */
+  --white: #ffffff;
+}
+
+/* ============================= */
+/* 🌌 BACKGROUND */
+/* ============================= */
+
+@media screen and (max-width: 800px){
+  body {
+    background: url('https://i.ibb.co/PGpJ6z03/Screenshot-2026-05-10-at-01-55-02.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: 'Caveat', serif;
+
+    /* 🌲 soft woodland text glow */
+    color: var(--kolur1) !important;
+  }
+
+  /* 🌲 mobile background stabilizer */
+  html:not(.nolayout) body:after {
+    content:"";
+    position:fixed;
+    top:0;
+    height:160vh;
+    left:0;
+    right:0;
+    z-index:-1;
+
+    background: url('https://i.ibb.co/PGpJ6z03/Screenshot-2026-05-10-at-01-55-02.png') center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    font-family: 'Caveat', serif;
+    color: var(--kolur1) !important;
+  }
+
+  /* 🍃 floating box positioning */
+  .boxtopper {
+    padding: none;
+    float: right;
+    margin: -560px;
+    height: 0px;
+    width: 0px;
+    position: relative;
+    z-index: 4;
+    margin-right: 250px;
+    pointer-events:none;
+  }
+}
+
+/* 🌲 desktop background */
+@media screen and (min-width: 801px){
+  body {
+    background: url('https://i.ibb.co/PGpJ6z03/Screenshot-2026-05-10-at-01-55-02.png') center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+
+    font-family: 'Caveat', serif;
+    font-size: 18px !important;
+
+    /* 🌿 readable tone */
+    color: var(--kolur1) !important;
+  }
+
+/* 🍃 floating box positioning */
+@media screen and (min-width: 768px){
+  .boxtopper {
+    padding: none;
+    float: right;
+    margin: -550px;
+    height: 0px;
+    width: 0px;
+    position: relative;
+    z-index: 4;
+    margin-right: 320px;
+    pointer-events:none;
+  }
+}
+
+/* ============================= */
+/* 🌲 CHAT MESSAGES */
+/* ============================= */
+
+#chatMessageList .s-chat-message:nth-child(even) {
+    background: rgba(42, 62, 40, 0.92) !important; /* shaded moss bark */
+    color: #edf3e8 !important; /* soft woodland mist */
+    font-family: 'Caveat', cursive;
+}
+
+#chatMessageList .s-chat-message:nth-child(odd) {
+    background: rgba(56, 78, 50, 0.82) !important; /* deep fern green */
+    color: #edf3e8 !important;
+    font-family: 'Caveat', cursive;
+}
+
+.s-chat-message__pinned {
+    background: linear-gradient(
+        90deg,
+        rgba(42,62,40,0.95),
+        rgba(120,150,102,0.18) /* soft sage glow */
+    ) !important;
+
+    color: #f4f8f0 !important;
+
+    box-shadow: 0 0 10px rgba(143,179,138,0.18); /* subtle moss glow */
+    font-family: 'Caveat', cursive;
+}
+
+.s-chat-message_timestamp {
+    color: #b7c9a9 !important; /* pale leaf timestamp */
+    font-family: 'Caveat', cursive;
+}
+
+div#chatMessageContainer {
+    border: none !important;
+}
+
+button#label_currentChannel {
+    background: linear-gradient(90deg, #3a4b35, #8fb38a) !important; /* woodland fade */
+    color: #edf3e8 !important;
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌿 TOPBAR */
+/* ============================= */
+
+.container.topbar {
+    background: linear-gradient(
+        180deg,
+        rgba(24, 34, 22, 0.95),
+        rgba(18, 28, 16, 0.95)
+    ) !important;
+
+    border-radius: 12px !important;
+
+    box-shadow:
+        inset 0 0 20px rgba(120,150,102,0.08),
+        0 0 10px rgba(143,179,138,0.14),
+        1px 1px 5px var(--darkgray) !important;
+
+    padding: 10px 15px !important;
+    backdrop-filter: blur(6px);
+
+    font-family: 'Caveat', cursive;
+}
+
+/* 🌲 welcome text */
+.welcomeback {
+    color: #c7d8bb !important;
+    font-size: 16px;
+
+    text-shadow: 0 0 5px rgba(143,179,138,0.25);
+
+    font-family: 'Caveat', cursive;
+}
+
+/* 🌿 username link */
+.welcomeback a {
+    color: #9fbc90 !important;
+
+    font-weight: bold;
+
+    text-shadow: 0 0 6px rgba(120,150,102,0.28);
+
+    transition: 0.5s;
+
+    font-family: 'Caveat', cursive;
+}
+
+.welcomeback a:hover {
+    color: #edf3e8 !important;
+
+    text-shadow: 0 0 10px rgba(183,201,169,0.45);
+
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌿 LINKS */
+/* ============================= */
+
+.toplinks {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-family: 'Caveat', cursive;
+}
+
+/* woodland links */
+.toplinks li a {
+    color: #b7c9a9 !important; /* soft sage leaf */
+    font-size: 15px;
+    text-decoration: none;
+
+    padding: 4px 10px;
+    border-radius: 8px;
+
+    transition: 0.4s ease;
+}
+
+/* subtle forest glow */
+.toplinks li a:hover {
+    color: #edf3e8 !important; /* pale woodland mist */
+
+    background: rgba(120, 150, 102, 0.12);
+    box-shadow: 0 0 10px rgba(143, 179, 138, 0.18);
+
+    text-shadow: 0 0 5px rgba(183, 201, 169, 0.35);
+}
+
+/* ============================= */
+/* 🍃 ICONS */
+/* ============================= */
+
+.toplinks img.icon {
+    filter:
+        drop-shadow(0 0 4px rgba(143, 179, 138, 0.22))
+        brightness(1.05);
+
+    transition: 0.4s ease;
+}
+
+.toplinks li a:hover img.icon {
+    filter:
+        drop-shadow(0 0 7px rgba(183, 201, 169, 0.38))
+        brightness(1.12);
+}
+
+/* ============================= */
+/* 🌱 CURRENCY NUMBERS */
+/* ============================= */
+
+#silverBeetlesAmt,
+#goldBeetlesAmt {
+    color: #d6e2cc !important;
+
+    text-shadow: 0 0 5px rgba(143, 179, 138, 0.32);
+
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌲 LOGOUT */
+/* ============================= */
+
+.toplinks li a[href*="logout"] {
+    color: #c7d8bb !important;
+}
+
+.toplinks li a[href*="logout"]:hover {
+    background: rgba(143, 179, 138, 0.12);
+
+    box-shadow: 0 0 10px rgba(120, 150, 102, 0.24);
+}
+
+/* ============================= */
+/* 🌲 FOREST CAVES */
+/* ============================= */
+
+/* base cave image styling (DO NOT override specific banners) */
+div.cave-grid > img {
+    height: 150px;
+    width: 250px;
+    opacity: 0.82;
+    border-radius: 10px !important;
+
+    box-shadow:
+        0 0 12px rgba(121, 170, 108, 0.20) !important;
+
+    transition: 1s ease;
+}
+
+/* hover base */
+div.cave-grid > img:hover {
+    opacity: 1;
+    filter: brightness(1.08) contrast(1.03);
+}
+
+/* prideoverview */
+div.cave-grid > img[src$="prideoverviewbanner.png"] {
+    content: url('https://i.ibb.co/chSd1GQq/Screenshot-2026-05-10-at-01-59-57.png') !important;
+}
+
+/* hover version */
+div.cave-grid > img[src$="prideoverview.png"]:hover {
+    content: url('https://i.ibb.co/chSd1GQq/Screenshot-2026-05-10-at-01-59-57.png') !important;
+	transition: 1s !important;
+}
+
+/* unsorted lions */
+div.cave-grid > img[src$="unsortedlionsbanner.png"] {
+    content: url('https://i.ibb.co/jkdkfH5W/Screenshot-2026-05-10-at-02-00-12.png') !important;
+}
+
+/* unsorted lions hover */
+div.cave-grid > img[src$="unsortedlionsbanner.png"]:hover {
+    content: url('https://i.ibb.co/jkdkfH5W/Screenshot-2026-05-10-at-02-00-12.png') !important;
+	transition: 1s !important;
+}
+
+/* nesting */
+div.cave-grid > img[src$="nestingbanner.png"] {
+    content: url('https://i.ibb.co/G4ns1HVB/Screenshot-2026-05-10-at-02-00-40.png') !important;
+}
+
+/* nesting hover */
+div.cave-grid > img[src$="nestingbanner.png"]:hover {
+    content: url('https://i.ibb.co/G4ns1HVB/Screenshot-2026-05-10-at-02-00-40.png') !important;
+	transition: 1s !important;
+}
+
+/* regular caves */
+div.cave-grid > img[src$="cavedefault.jpg"] {
+    content: url("https://i.ibb.co/vvHpcJDs/Screenshot-2026-05-10-at-02-01-02.png") !important;
+}
+
+div.cave-grid > img[src$="cavedefault.jpg"]:hover {
+    content: url("https://i.ibb.co/vvHpcJDs/Screenshot-2026-05-10-at-02-01-02.png") !important;
+	transition: 1s !important;
+}
+
+div.cave-grid > img[src$="caveunused.jpg"] {
+    content: url("https://i.ibb.co/vvHpcJDs/Screenshot-2026-05-10-at-02-01-02.png") !important;
+}
+
+div.cave-grid > img[src$="caveunused.jpg"]:hover {
+    content: url("https://i.ibb.co/vvHpcJDs/Screenshot-2026-05-10-at-02-01-02.png") !important;
+	transition: 1s !important;
+}
+
+/* ============================= */
+/* 🍃 FEATURED LIONESS */
+/* ============================= */
+
+.lionImage img:first-child {
+    visibility: hidden;
+}
+
+.lionImage {
+    background: url('https://i.ibb.co/C3kdVY4z/Screenshot-2026-05-10-at-02-01-16.png') no-repeat !important;
+    background-size: cover;
+
+    box-shadow:
+        0 0 18px rgba(95, 148, 92, 0.18); /* soft forest glow */
+}
+
+/* ============================= */
+/* 🌲 CAVE / PANEL STYLE */
+/* ============================= */
+
+.cave-grid,
+.mound-grid {
+    background: rgba(28, 48, 31, 0.78) !important; /* deep forest green */
+
+    box-shadow:
+        inset 0 0 22px rgba(154, 201, 139, 0.07),
+        0 0 10px rgba(0,0,0,0.35),
+        0 0 8px rgba(95, 148, 92, 0.12) !important;
+
+    border-radius: 12px !important;
+
+    text-shadow: 1px 1px 1.5px #08100a;
+
+    max-height: 175px;
+    max-width: 250px;
+    overflow: hidden;
+
+    font-family: 'Caveat', cursive;
+    color: #e7f2df !important;
+}
+  
+/* ============================= */
+/* 🌲 MOUNDS */
+/* ============================= */
+
+/* beetle mound */
+.mound-grid img {
+    background: url('https://i.ibb.co/wh01zrh5/Screenshot-2026-05-10-at-02-09-52.png') no-repeat center !important;
+
+    width: 0 !important;
+    height: 0 !important;
+
+    padding-top: 80px;
+    padding-right: 130px;
+
+  	max-height:150px;
+
+    border-radius: 10px !important;
+    opacity: 0.82;
+
+    box-shadow:
+        1px 1px 5px rgba(0,0,0,0.45),
+        0 0 10px rgba(95, 148, 92, 0.14) !important;
+}
+
+/* hover */
+.mound-grid img:hover {
+    transition: 0.9s !important;
+    opacity: 1;
+}
+
+/* ============================= */
+/* 🍃 LINKS */
+/* ============================= */
+
+a:link,
+a:visited {
+  color: #b8d9ae !important; /* soft moss green */
+
+  transition: 0.5s !important;
+
+  text-shadow: 0 0 6px rgba(124, 170, 112, 0.20);
+
+  font-family: 'Caveat', cursive;
+}
+
+a:hover {
+  color: #edf7e8 !important; /* pale forest glow */
+}
+
+/* ============================= */
+/* ✨ SOFT FOREST GLOW */
+/* ============================= */
+
+h1, h2, h3 {
+    text-shadow: 0 0 10px rgba(174, 214, 161, 0.16);
+
+    font-family: 'Caveat', cursive;
+
+    color: #edf7e8 !important;
+}
+
+/* ============================= */
+/* 🦌 LION + USER AVATAR */
+/* ============================= */
+
+div#lion_image {
+	opacity: .88;
+
+	box-shadow:
+        0 0 12px rgba(108, 156, 98, 0.22) !important;
+
+	border-radius: 6% !important;
+
+	overflow: hidden;
+
+	margin-top: 19px;
+	margin-left: 6px;
+
+	transition: .6s ease;
+}
+
+div#lion_image:hover {
+	opacity: 1;
+
+	box-shadow:
+        0 0 18px rgba(164, 214, 154, 0.30) !important;
+
+	transition: .6s ease;
+}
+
+table#player img {
+	opacity: 0.88;
+
+	box-shadow:
+        0 0 10px rgba(108, 156, 98, 0.18) !important;
+
+	border-radius: 8px;
+}
+
+table#player img:hover {
+	opacity: 1;
+
+	box-shadow:
+        0 0 16px rgba(174, 224, 164, 0.28) !important;
+
+	transition: .6s ease;
+}
+  
+/* ============================= */
+/* 🌲 NAVBAR (FOREST GLOW) */
+/* ============================= */
+
+.navbar {
+	background: #4f6b46; /* deep moss green */
+
+	border-bottom: 0px ridge !important;
+
+	border-radius: 10px;
+
+	box-shadow:
+		inset 0 -40px 60px rgba(170, 210, 160, 0.16),
+	    0 0 8px rgba(120, 165, 110, 0.14) !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-size: 18px !important;
+
+	color: #edf7e8 !important; /* pale forest cream */
+
+	font-family: 'Caveat', cursive;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	background: #628356;
+
+	color: #ffffff !important;
+
+	text-shadow: 0 0 6px rgba(230, 245, 225, 0.45);
+
+	border-radius: 18px;
+
+	box-shadow:
+		inset 0 0 18px rgba(185, 220, 175, 0.18);
+
+	transition: 0.7s !important;
+}
+
+/* ============================= */
+/* 🍃 MAIN PANEL */
+/* ============================= */
+
+.container.main {
+	background: rgba(58, 78, 54, 0.90) !important;
+
+	border-left: 0px ridge;
+	border-right: 0px ridge;
+	border-bottom: 0px ridge;
+
+	border-radius: 10px;
+
+	box-shadow:
+		inset 0 0 90px rgba(180, 215, 168, 0.08),
+	    0 0 8px rgba(130, 170, 120, 0.10) !important;
+
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.55);
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌿 LEFT PANEL */
+/* ============================= */
+
+.col-md-9 {
+	background: none;
+
+	border-right: none;
+
+	color: #edf7e8 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌲 BREADCRUMB */
+/* ============================= */
+
+.breadcrumb {
+	background: #58734e !important;
+
+	border: 0px ridge !important;
+
+	border-radius: 5px;
+
+	box-shadow:
+		inset 0 0 18px rgba(190, 220, 180, 0.10),
+	    0 0 6px rgba(130, 175, 120, 0.12) !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+.breadcrumb .active {
+	color: #f3f9ef;
+
+	font-size: 18px !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* ✨ BUTTONS */
+/* ============================= */
+
+input.floatright {
+	background: rgba(170, 205, 160, 0.12) !important;
+
+	border: 0px ridge;
+
+	border-radius: 10px !important;
+
+	color: #f4fbf1 !important;
+
+	text-shadow: 0 0 4px rgba(210, 235, 205, 0.20) !important;
+
+	box-shadow:
+		inset 0 0 18px rgba(180, 215, 170, 0.14),
+	    0 0 6px rgba(130, 170, 120, 0.10) !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+input.floatright:hover {
+	background: rgba(190, 225, 180, 0.14) !important;
+
+	box-shadow:
+		inset 0 0 22px rgba(220, 240, 215, 0.18),
+	    0 0 10px rgba(170, 210, 160, 0.16) !important;
+
+	transition: .7s !important;
+}
+
+button.button {
+	background: #5f7d53;
+
+	border: 0px ridge;
+
+	border-radius: 10px !important;
+
+	color: #f0f8ec;
+
+	font-size: 18px !important;
+
+	text-shadow: 0 0 4px rgba(220, 240, 215, 0.18);
+
+	box-shadow:
+		inset 0 0 18px rgba(185, 220, 175, 0.12),
+	    0 0 6px rgba(130, 170, 120, 0.10) !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+button.button:hover {
+	background: #739466;
+
+	color: #ffffff;
+
+	box-shadow:
+		inset 0 0 24px rgba(225, 240, 220, 0.18),
+	    0 0 12px rgba(180, 215, 170, 0.18) !important;
+
+	transition: .7s !important;
+}
+
+/* ============================= */
+/* 🌲 COMMENT BOX */
+/* ============================= */
+
+#commentBox {
+	background: rgba(72, 110, 78, 0.55) !important;
+
+	box-shadow:
+		inset 0 0 18px rgba(190, 220, 180, 0.10),
+	    0 0 6px rgba(120, 170, 110, 0.14) !important;
+
+	border: none !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+::placeholder {
+	color: #edf7e8 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+div.comment {
+	background: rgba(90, 130, 95, 0.55);
+
+	box-shadow:
+		inset 0 0 18px rgba(200, 230, 190, 0.10),
+	    0 0 6px rgba(130, 175, 120, 0.14) !important;
+
+	font-weight: bold;
+
+	color: #f3f9ef;
+
+	font-family: 'Caveat', cursive;
+}
+
+input#comment {
+	background: rgba(160, 200, 155, 0.14) !important;
+
+	color: #1f2f22 !important;
+
+	border-radius: 10px !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+small.text-muted {
+	color: #eaf5e4;
+
+	font-family: 'Caveat', cursive;
+}
+
+small.text-muted a {
+	color: #d8ead1;
+
+	font-family: 'Caveat', cursive;
+}
+
+input[type="button"].bad {
+	background: #7aa67a !important;
+
+	border-radius: 10px !important;
+
+	color: #1f2f22 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌲 GENERAL ALERT */
+.alert {
+	background: #4f7a5a;
+
+	border: 0px ridge;
+
+	text-align: center;
+
+	text-shadow: 1px 1px 1.5px #000;
+
+	border-radius: 10px !important;
+
+	float: none;
+
+	color: #f2f8ee !important;
+
+	box-shadow:
+		#cfe8c966 0px -50px 36px -28px inset,
+		1px 1px 5px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ⚠️ WARNING ALERT */
+.alert-warning{
+	background: #5f8f66;
+
+	border: 0px ridge;
+
+	text-align: center;
+
+	text-shadow: 1px 1px 1.5px #000;
+
+	border-radius: 10px !important;
+
+	float: none;
+
+	color: #ffffff !important;
+
+	box-shadow:
+		#dff5da66 0px -50px 36px -28px inset,
+		1px 1px 5px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ❗ DANGER ALERT */
+.alert-danger {
+	background: #3f6f52 !important;
+
+	text-align: center;
+
+	border: 0px ridge;
+
+	text-shadow: 1px 1px 1.5px #000;
+
+	border-radius: 10px !important;
+
+	float: none;
+
+	color: #f2fcf0 !important;
+
+	box-shadow:
+		#bfe6c966 0px -50px 36px -28px inset,
+		1px 1px 5px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🍃 SIDE BOXES / FEATURE PANELS */
+.feature,
+div.left {
+	background: #5a8a63 !important;
+
+	box-shadow:
+		#d8f0d255 0px -80px 36px -28px inset,
+		1px 1px 5px #000 !important;
+
+	text-shadow: 1px 1px 1.5px #000;
+
+	border-radius: 10px !important;
+
+	border: none!important;
+
+	color: #f2f8ee !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 MAIN PANELS */
+.panel {
+	background: #4b7a5b !important;
+
+	border: 0px ridge !important;
+
+	border-radius: 10px;
+
+	color:#f2f8ee !important;
+
+	box-shadow:
+		#cfe8c955 0px -50px 36px -28px inset,
+		1px 1px 5px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ✨ TEXT INSIDE BARS */
+.progress div {
+	color: #ffffff !important;
+
+	font-size: 13px !important;
+
+	text-shadow: 1px 1px 1px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌲 BAR BACKGROUND */
+.progress {
+	background: linear-gradient(#3f6f52, #6fa87a);
+
+	box-shadow:1px 1px 5px #000 !important;
+
+	border-radius: 20px;
+}
+
+/* 💚 ENERGY BAR */
+.progress-bar-warning {
+   background: linear-gradient(#9ad8a3, #5f9f6f)!important;
+}
+
+/* 🌿 HUNGER BAR */
+.progress-bar-danger {
+    background: linear-gradient(#6fa87a, #9ad8a3)!important;
+}
+
+/* 🍃 XP BAR */
+.progress-bar-success {
+    background: linear-gradient(#dff5da, #7fbf8a)!important;
+}
+
+/* 📊 GENERAL BAR STYLE */
+.progress-bar {
+    background: linear-gradient(#9ad8a3, #bfe6c9);
+
+	border-radius: 20px;
+
+	box-shadow:1px 1px 5px #000 !important;
+}
+
+/* 🏆 ACHIEVEMENT BAR */
+div:nth-child(2)>div>div>div.progress-bar.progress-bar-success {
+	background: linear-gradient(#8fd49a, #5f9f6f)!important;
+}
+
+/* 📈 ACCOUNT STANDING */
+th > div > div.progress-bar.progress-bar-success {
+    background: linear-gradient(#bfe6c9, #8fd49a)!important;
+}
+  
+/* 🌲 MAIN HEADER */
+h1 {
+	color: #eaf5e4;
+
+	font-size: 72px;
+
+	font-family: 'Caveat', cursive;
+
+	text-align: center;
+
+	text-shadow: 0 0 12px rgba(140, 190, 130, 0.28);
+}
+
+/* 🍃 SUB HEADER */
+h2 {
+	color: #dff0d8;
+
+	font-size: 56px;
+
+	text-align: center;
+
+	text-shadow: 0 0 10px rgba(120, 170, 110, 0.22);
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 SMALL HEADER */
+h3 {
+	color: #f2f8ee !important;
+
+	font-size: 22px !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* ✨ HOVER EFFECT */
+h3:hover {
+	color: #bfe6c9 !important;
+
+	transition: .7s!important;
+}
+
+/* 🌲 MAIN LION INFO TABLE (container) */
+.table {
+	background: #4b6f52; /* deep forest canopy */
+
+	border: 0px ridge;
+
+	text-shadow: 1px 1px 1.5px #000;
+
+	border-radius: 10px !important;
+
+	border-collapse: separate;
+
+	box-shadow:
+		0 0 8px rgba(140, 190, 130, 0.12);
+
+	font-family: 'Caveat', cursive;
+}
+
+.table a:link,
+.table a:visited {
+	color: #d8ead1 !important; /* soft moss glow */
+
+	transition: 0.5s!important;
+
+	font-family: 'Caveat', cursive;
+}
+
+.table a:active {
+	color: #ffffff !important;
+
+	transition: 0.5s!important;
+
+	font-family: 'Caveat', cursive;
+}
+
+.table a:hover {
+	color: #f2f8ee !important;
+
+	transform: scale(1.05);
+
+	transition: 0.7s!important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 HEADER ROWS */
+.top,
+.bottom,
+th {
+	background: #5a8a63 !important;
+
+	box-shadow:
+		0 0 12px rgba(190, 220, 180, 0.10) inset,
+		1px 1px 5px #000 !important;
+
+	color: #f2f8ee !important;
+
+	font-size: 18px !important;
+
+	border-radius: 10px;
+
+	font-family: 'Caveat', cursive;
+}
+
+.table .left {
+	background: #4f7a5a !important;
+
+	box-shadow:
+		0 0 10px rgba(190, 220, 180, 0.08) inset !important;
+
+	border-radius: 10px;
+}
+
+/* 🍃 INPUT FIELDS */
+input,
+select,
+textarea {
+	background: #4a6f53 !important;
+
+	border: 0px ridge !important;
+
+	box-shadow:
+		0 0 10px rgba(180, 210, 170, 0.12) inset,
+		1px 1px 5px #000 !important;
+
+	border-radius: 10px;
+
+	color: #f2f8ee !important;
+
+	text-shadow: 1px 1px 2px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌲 INNER TABLE LEFT */
+.inner-table .left {
+	background: #4f7a5a !important;
+
+	color: #eef6ea !important;
+
+	box-shadow:
+		0 0 10px rgba(190, 220, 180, 0.10) inset,
+		1px 1px 5px #000 !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🍃 INNER TABLE RIGHT */
+.inner-table .right {
+	background: #3f6f52 !important;
+
+	box-shadow:
+		0 0 12px rgba(190, 220, 180, 0.12) inset,
+		1px 1px 5px #000 !important;
+
+	color: #f2f8ee !important;
+
+	border-radius: 10px;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 RIGHT ODD */
+.right_odd {
+	background: #35644a !important;
+
+	box-shadow:
+		0 0 10px rgba(180, 210, 170, 0.10) inset !important;
+}
+
+/* 🌲 ITEM HEADER */
+.item-header {
+	background: #5a8a63 !important;
+
+	border-radius: 10px;
+
+	box-shadow:
+		0 0 10px rgba(190, 220, 180, 0.12) inset !important;
+
+	color: #f2f8ee !important;
+
+	font-size: 15px !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🍃 ITEM */
+.item {
+	background: #4b7a5b !important;
+
+	box-shadow:
+		0 0 12px rgba(190, 220, 180, 0.10) inset,
+		1px 1px 5px #000 !important;
+
+	border-radius: 10px;
+
+	border: 0px ridge !important;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 ITEM FOOTER */
+.item-footer {
+	background: #3f6f52;
+}
+
+/* 🍃 SLIDER */
+div.slider.round {
+	background: #7fbf8a !important; /* soft moss glow */
+}
+
+div.slider.round::before {
+	background: #f2f8ee !important; /* pale forest light */
+}
+
+/* 🌲 BOX CONTAINERS */
+.boxcontainer {
+	background: none;
+
+	height: auto;
+
+	padding: 0px;
+
+	display: flex;
+
+	justify-content: center;
+}
+
+/* 🌿 BOXES */
+.Box1,
+.Box2 {
+	float: left;
+
+	background: linear-gradient(180deg, #4f7a5a, #3f6f52);
+
+	color: #f2f8ee;
+
+	padding: 15px;
+
+	border: 0px ridge !important;
+
+	box-shadow:
+		0 0 20px rgba(190, 220, 180, 0.08) inset,
+		1px 1px 5px #000 !important;
+
+	border-radius: 10px;
+
+	margin: 5px;
+
+	height: 300px;
+
+	width: 350px;
+
+	overflow: hidden;
+
+	margin-bottom: 25px;
+
+	transition: 1s;
+
+	font-family: 'Caveat', cursive;
+}
+
+.Box1:hover,
+.Box2:hover {
+	overflow-y: auto;
+}
+
+/* 🌲 SCROLLBAR */
+::-webkit-scrollbar {
+	width: 9px;
+
+	height: 9px;
+}
+
+::-webkit-scrollbar-track {
+	background: #3f6f52;
+
+	box-shadow:
+		0 0 10px rgba(180, 210, 170, 0.10) inset,
+		1px 1px 5px #000 !important;
+
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #7fbf8a;
+
+	box-shadow:
+		0 0 12px rgba(200, 230, 190, 0.12) inset,
+		1px 1px 5px #000 !important;
+
+	border-radius: 10px;
+}
+
+/* 📱 MOBILE OVERRIDE */
+@media only screen and (max-width: 767px) {
+    .container.main .hidden-xs {
+        display: block !important;
+    }
+}
+
+/* 🌲 CREDITS (DO NOT REMOVE) */ 
+.breadcrumb::after { 
+	content: "CSS by Sak#327675"; 
+	color: #cfe8c9; /* soft forest glow */
+	text-shadow: 1px 1px 1.5px #0a1a0f; 
+	font-size: 17px !important; 
+	position: absolute; 
+	right: 13%; 
+	z-index: 100;
+
+	font-family: 'Caveat', cursive;
+}
+
+/* 🌿 DYNASTY LIST — FOREST GLOW */
+.dynastylist .left {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	background-size: cover !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	transition: 0.8s ease;
+	box-shadow: 1px 1px 5px #0a1a0f;
+	width: 200px;
+	height: 200px;
+	display: block;
+}
+
+/* ensure anchor doesn't collapse layout */
+.dynastylist a {
+	display: block;
+}
+
+/* shared behavior fix */
+.dynastylist .left {
+	display: block;
+}
+
+/* 🌲 DYNASTY */
+div.left img {
+    content: url('https://i.ibb.co/v47Bbq2x/Screenshot-2026-05-10-at-02-56-07.png') !important;
+    object-fit: cover;
+    object-position: top;
+    padding: 0;
+    height: 140px;
+    max-width: 140px !important;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+/* 🍃 hover glow effect — forest shimmer */
+.row.dynastycollection .dynastylist .left:hover {
+	transform: scale(1.03);
+	box-shadow:
+		0 0 10px rgba(120, 170, 110, 0.25),
+		0 0 20px rgba(160, 210, 150, 0.18),
+		1px 1px 5px #0a1a0f;
+	filter: brightness(1.08) saturate(1.1);
+}
+
+/* 🌲 BACKGROUND TABLE — FOREST DEPTH */
+.table {
+	background: #1b2a1f; /* deep forest base */
+	border: 0px ridge;
+	text-shadow: 1px 1px 1.5px #000;
+	border-radius: 10px !important;
+	border-collapse: separate;
+	box-shadow: 0 0 10px rgba(120, 170, 110, 0.15);
+
+	font-family: 'Caveat', cursive;
+}
+
+.table a:link {
+	color: #bfe6c9 !important; /* moss glow */
+	transition: 0.5s!important;
+}
+
+.table a:visited {
+	color: #bfe6c9 !important;
+	transition: 0.5s!important;
+}
+
+.table a:active {
+	color: #f2f8ee !important; /* pale flash */
+	transition: 0.5s!important;
+} 
+
+.table a:hover {
+	color: #ffffff !important; /* soft canopy light */
+	-webkit-transform: scale(1.1);
+	transition: 0.7s!important;
+}
+
+/* 🌲 CONTAINER — FOREST LAYERS */
+/* ============================= */
+.boxcontainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 🌿 BOX — DEEP FOREST GLOW */
+/* ============================= */
+.box {
+    flex: 1;
+    height: 240px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(28, 52, 36, 0.95),   /* deep canopy green */
+        rgba(12, 22, 16, 0.95)    /* forest shadow */
+    ) !important;
+
+    color: #eef6ea; /* soft leaf glow */
+    padding: 12px;
+
+    border: 1px solid rgba(120, 170, 110, 0.30);
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 18px rgba(0,0,0,0.65),
+        inset 0 0 25px rgba(120, 170, 110, 0.10),
+        0 0 8px rgba(160, 210, 150, 0.14);
+
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    transition: all 0.35s ease;
+
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* ✨ FOREST HOVER — LIGHT THROUGH LEAVES */
+/* ============================= */
+.box:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(120, 170, 110, 0.28),
+        inset 0 0 35px rgba(160, 210, 150, 0.16);
+
+    border-color: rgba(200, 235, 190, 0.40);
+}
+
+/* ============================= */
+/* 🖼️ IMAGE SAFETY */
+/* ============================= */
+.box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+
+    box-shadow: 0 0 10px rgba(120, 170, 110, 0.18);
+}
+
+/* ============================= */
+/* 🔤 HEADINGS — MOSS LIGHT */
+/* ============================= */
+.box h3 {
+    color: #dff0d8; /* soft moss glow */
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 18px;
+
+    text-shadow: 0 0 8px rgba(120, 170, 110, 0.35);
+
+    font-family: 'Caveat', cursive;
+}
+
+/* ============================= */
+/* 📜 SCROLLBAR — FOREST GLASS */
+/* ============================= */
+.box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.box::-webkit-scrollbar-track {
+    background: rgba(12,22,16,0.95);
+    border-radius: 10px;
+}
+
+.box::-webkit-scrollbar-thumb {
+    background: linear-gradient(#5f8f66, #9ad8a3);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(120,170,110,0.35);
+}
+
+/* ============================= */
+/* 📱 MOBILE */
+/* ============================= */
+@media (max-width: 767px) {
+    .boxcontainer {
+        flex-direction: column;
+    }
+
+    .box {
+        height: auto;
+    }
+}
